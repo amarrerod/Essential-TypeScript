@@ -33,4 +33,12 @@ export class TodoCollection {
         // https://bit.ly/3aTceFe --> Convertir un iterable en un array
         return [...this.itemMap.values()].filter(item => includeComplete || !item.complete);
     }
+
+    removeComplete() {
+        this.itemMap.forEach(item => {
+            if (item.complete) {
+                this.itemMap.delete(item.id);
+            }
+        });
+    }
 }
