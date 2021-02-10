@@ -12,6 +12,4 @@ let toDos: TodoItem[] = [
 let collectionOfToDos: TodoCollection = new TodoCollection("Marrero", toDos);
 console.clear();
 console.log(`${collectionOfToDos.userName}'s ToDo List`);
-let newId: number = collectionOfToDos.addTodo("Go for run");
-let todoItem: TodoItem = collectionOfToDos.getTodoById(newId);
-todoItem.printDetails();
+collectionOfToDos.getTodoItems(true).forEach(item => item.printDetails());
