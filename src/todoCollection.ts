@@ -1,5 +1,6 @@
 
 import { TodoItem } from "./todoItem";
+import { ItemCounts } from "./itemCounts";
 
 export class TodoCollection {
     private nextId: number = 1;
@@ -40,5 +41,12 @@ export class TodoCollection {
                 this.itemMap.delete(item.id);
             }
         });
+    }
+
+    getItemCounts(): ItemCounts {
+        return {
+            total: this.itemMap.size,
+            incomplete: this.getTodoItems(false).length
+        };
     }
 }

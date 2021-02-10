@@ -11,8 +11,11 @@ let toDos: TodoItem[] = [
 
 let collectionOfToDos: TodoCollection = new TodoCollection("Marrero", toDos);
 console.clear();
-console.log(`${collectionOfToDos.userName}'s ToDo List`);
-collectionOfToDos.getTodoItems(true).forEach(item => item.printDetails());
+console.log(`${collectionOfToDos.userName}'s ToDo List`
+    + ` (${collectionOfToDos.getItemCounts().incomplete} items to do)`);
+collectionOfToDos.getTodoItems(false).forEach(item => item.printDetails());
+
+/* collectionOfToDos.getTodoItems(true).forEach(item => item.printDetails());
 console.log('Removing completed tasks');
 collectionOfToDos.removeComplete();
-collectionOfToDos.getTodoItems(true).forEach(item => item.printDetails());
+collectionOfToDos.getTodoItems(true).forEach(item => item.printDetails()); */
