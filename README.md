@@ -10,3 +10,13 @@ Specifying the test location in the settings.json
 "mochaExplorer.require": "ts-node/register",
 "mochaExplorer.files": "code_tests/**/*.ts",
 ```
+
+Dependencies:
+
+- mocha 
+- chai
+- ts-node
+
+For vscode Intellisense:
+
+- @types/chai and @types/mocha
