@@ -4,7 +4,7 @@ import { ItemCounts } from "./itemCounts";
 
 export class TodoCollection {
     private nextId: number = 1;
-    private itemMap = new Map<number, TodoItem>();
+    protected itemMap = new Map<number, TodoItem>();
 
     constructor(public userName: string,
         todoItems: TodoItem[] = []) {
