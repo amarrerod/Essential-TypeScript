@@ -90,3 +90,66 @@ totalPrice = sumPricesWithArrow(100, 200);
 console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
 totalPrice = sumPricesWithArrow(100, 200, undefined, false, 'hello');
 console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
+
+
+let names = ['Hat', 'Boots', 'Gloves'];
+let prices = [];
+
+prices.push(100);
+prices.push('100');
+prices.push(50.25);
+
+console.log(`First Item: ${names[0]}: ${prices[0]}`);
+totalPrice = sumPricesWithArrow(...prices);
+console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
+
+// The spread operator can be used to expand the contents of an array (...)
+let combinedArray1 = [...names, ...prices];
+let combinedArray2 = [names, prices];
+combinedArray1.forEach(element => console.log(`Combined Array1 Element: ${element}`));
+combinedArray2.forEach(element => console.log(`Combined Array2 Element: ${element}`));
+
+let hat = {
+    name: 'Hat',
+    price: 100
+};
+
+let boots = {
+    name: 'Boots',
+    price: '100'
+};
+
+let gloves = {
+    productName: 'Gloves',
+    price: '40'
+};
+
+totalPrice = sumPricesWithArrow(hat.price, boots.price);
+console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
+
+
+gloves.name = gloves.productName;
+delete gloves.productName;
+gloves.price = 20;
+
+totalPrice = sumPricesWithArrow(hat.price, boots.price, gloves.price);
+console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
+
+let propertyCheck = hat.price || 0;
+let objectAndPropertyCheck = (hat || {}).price || 0;
+console.log(`Checks: ${propertyCheck}, ${objectAndPropertyCheck}`);
+
+// The spread operator can be used to expand the properties and values defined by an object, which makes it
+// easy to create one object based on the properties defined by another
+let otherHat = {...hat};
+// Copia las propiedades del objecto hat al nuevo objeto otherHat
+console.log(`Spread: ${otherHat.name}, ${otherHat.price}`);
+
+let additionalProperties = {...hat, discounted : true};
+console.log(`Additional: ${JSON.stringify(additionalProperties)}`);
+let replacedProperties = {...hat, price: 10};
+console.log(`Replaced: ${JSON.stringify(replacedProperties)}`);
+let { price, ...someProperties }  = hat;
+// Las propiedades del objeto hat se descomponen
+// hat.price se asigna a price y el resto a someProperties
+console.log(`Selected: ${JSON.stringify(someProperties)}`);
