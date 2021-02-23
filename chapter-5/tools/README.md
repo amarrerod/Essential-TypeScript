@@ -6,3 +6,9 @@
 - package.json: Dependencias y descripción del proyecto.
 - package-lock.json: Lista completa de las dependencias del proyecto.
 - tsconfig.json: Configuración del compilador de TypeScript (tsc).
+
+---
+
+Para ejecutar el código automáticamente después de compilar:
+
+- npx tsc-watch --onsuccess "node dist/index.js"
