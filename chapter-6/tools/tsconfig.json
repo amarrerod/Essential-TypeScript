@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es2018",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "noEmitOnError": true,
+        "module": "commonjs", // Formato para los modulos
+        "sourceMap": true // Para que el depurador pueda relacionar el codigo TS a SS
+    }
+}
