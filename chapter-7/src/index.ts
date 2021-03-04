@@ -34,6 +34,7 @@ let taxString = calculateTaxesUnion(100, true);
  * 
  * as = keyword seguido del tipo
  * let taxString = <string> (...) es una sintáxis alternativa
+ * Para crear una assertion que comprueba que el valor devuelto no tiene tipo null se incluye ! al final.
  */
 taxNumber = calculateTaxesUnion(100, false) as number;
 taxString = calculateTaxesUnion(100, true) as string;
